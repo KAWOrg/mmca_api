@@ -10,8 +10,9 @@
 	</parent>
 	<groupId>kaw.levelup</groupId>
 	<artifactId>mmca</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
+	
 	<name>mmca</name>
 	<description>mmca project for Spring Boot</description>
 	<url/>
@@ -62,7 +63,7 @@
 		<dependency>
 		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
-		    <version>42.2.5</version>
+		    <version>42.6.0</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
