@@ -7,5 +7,5 @@ import kaw.levelup.mmca.main.data.entity.MusumInfo;
 
 @Repository
 public interface MusumInfoRepository extends JpaRepository<MusumInfo, String>{
-
+	// 미술관 정보
 }

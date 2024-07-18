@@ -16,9 +16,9 @@ import lombok.Getter;
 public class MusumInfo {
 	
 	@Id
-	@Comment("미술관코드")
 	@Column(length = 3, nullable = false)
-	String musumCode;
+	@Comment("미술관 코드")
+	String musumCd;
 	
 	@Comment("미술관명")
 	@Column(length = 10, nullable = false)
@@ -33,12 +33,12 @@ public class MusumInfo {
 	String musumMailAddr;
 	
 	@Comment("전화번호")
-	@Column(length = 11, nullable = false)
+	@Column(length = 12, nullable = false)
 	String musumTel;
 	
 	public MusumInfoVO toVO() {
 		return MusumInfoVO.builder()
-				.musumCode(musumCode)
+				.musumCd(musumCd)
 				.musumNm(musumNm)
 				.musumAddr(musumAddr)
 				.musumMailAddr(musumMailAddr)
