@@ -6,7 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import kaw.levelup.mmca.main.data.vo.MusumInfoVO;
+import kaw.levelup.mmca.main.data.vo.MusumInfoDTO;
 import lombok.Data;
 import lombok.Getter;
 
@@ -36,8 +36,8 @@ public class MusumInfo {
 	@Column(length = 12, nullable = false)
 	String musumTel;
 	
-	public MusumInfoVO toVO() {
-		return MusumInfoVO.builder()
+	public MusumInfoDTO toDTO() {
+		return MusumInfoDTO.builder()
 				.musumCd(musumCd)
 				.musumNm(musumNm)
 				.musumAddr(musumAddr)

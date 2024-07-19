@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kaw.levelup.mmca.main.data.vo.MusumInfoVO;
-import kaw.levelup.mmca.main.data.vo.MusumPlaceVO;
+import kaw.levelup.mmca.main.data.vo.MusumInfoDTO;
+import kaw.levelup.mmca.main.data.vo.MusumPlaceDTO;
 import kaw.levelup.mmca.main.service.MusumInfoService;
 import lombok.RequiredArgsConstructor;
 
@@ -30,20 +30,20 @@ public class MusumController {
 
 	@GetMapping("/getMusumList")
 	@Operation(summary = "미술관 목록 조회", description = "미술관 목록 조회")
-	public ResponseEntity<List<MusumInfoVO>> getMusumList() {
-		List<MusumInfoVO> res = musumInfoService.getMusumList();
+	public ResponseEntity<List<MusumInfoDTO>> getMusumList() {
+		List<MusumInfoDTO> res = musumInfoService.getMusumList();
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	
 	@GetMapping("/getMusumPlaceList/{musumCd}")
 	@Operation(summary = "시설정보 목록 조회", description = "편의시설 및 문화시설 조회")
-	public ResponseEntity<List<MusumPlaceVO>> getMusumPlaceList(@PathVariable String musumCd) {
-		List<MusumPlaceVO> res = musumInfoService.getMusumPlaceList(musumCd);
+	public ResponseEntity<List<MusumPlaceDTO>> getMusumPlaceList(@PathVariable String musumCd) {
+		List<MusumPlaceDTO> res = musumInfoService.getMusumPlaceList(musumCd);
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	@PostMapping("/createMusumPlace")
 	@Operation(summary = "시설정보 등록", description = "편의시설 및 문화시설 등록")
-	public void createMusumPlace(MusumPlaceVO vo) {
-		musumInfoService.createMusumPlace(vo);
+	public void createMusumPlace(MusumPlaceDTO dto) {
+		musumInfoService.createMusumPlace(dto);
 	}
 }

@@ -2,13 +2,13 @@ package kaw.levelup.mmca.main.service;
 
 import java.util.List;
 
-import kaw.levelup.mmca.main.data.vo.MusumInfoVO;
-import kaw.levelup.mmca.main.data.vo.MusumPlaceVO;
+import kaw.levelup.mmca.main.data.vo.MusumInfoDTO;
+import kaw.levelup.mmca.main.data.vo.MusumPlaceDTO;
 
 
 public interface MusumInfoService {
 	
-	List<MusumInfoVO> getMusumList();
-	List<MusumPlaceVO> getMusumPlaceList(String musumCd);
-	void createMusumPlace(MusumPlaceVO vo);
+	List<MusumInfoDTO> getMusumList();
+	List<MusumPlaceDTO> getMusumPlaceList(String musumCd);
+	void createMusumPlace(MusumPlaceDTO dto);
 }

@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Builder
-public class MusumInfoVO {
+public class MusumInfoDTO {
 	
 	String musumCd;
 	String musumNm;

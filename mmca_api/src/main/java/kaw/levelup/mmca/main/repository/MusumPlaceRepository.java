@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import kaw.levelup.mmca.main.data.entity.MusumPlace;
 
 @Repository
-public interface MusumPlaceRepository extends JpaRepository<MusumPlace, String> {
+public interface MusumPlaceRepository extends JpaRepository<MusumPlace, Long> {
 	// 미술관 시설정보
 	List<MusumPlace> findByMusumCd(String musumCd);
 

@@ -8,8 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import kaw.levelup.mmca.main.data.vo.MusumPlaceVO;
+import kaw.levelup.mmca.main.data.vo.MusumPlaceDTO;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,13 +18,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @Table(name = "musum_place")
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED) 
+//@Builder
 public class MusumPlace {
 	
 	@Id
 	@Comment("시설 코드")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	// id값 자동생성
-	int placeId;
+	Long placeId;
 	
 	@Comment("시설종류 코드")
 	@Column(length = 3, nullable = false)
@@ -48,17 +51,16 @@ public class MusumPlace {
 	
 	
 	@Builder
-	public MusumPlace(int placeId, String placeTypeCd, String placeNm, String placeDscrp, String musumCd) {
+	public MusumPlace(Long placeId, String placeTypeCd, String placeNm, String placeDscrp, String musumCd) {
 		this.placeId = placeId;
 		this.placeTypeCd = placeTypeCd;
 		this.placeNm = placeNm;
 		this.placeDscrp = placeDscrp;
 		this.musumCd = musumCd;
-		
 	}
-	
-	public MusumPlaceVO toVO() {
-		return MusumPlaceVO.builder()
+
+	public MusumPlaceDTO toDTO() {
+		return MusumPlaceDTO.builder()
 				.placeId(placeId)
 				.placeTypeCd(placeTypeCd)
 				.placeNm(placeNm)
