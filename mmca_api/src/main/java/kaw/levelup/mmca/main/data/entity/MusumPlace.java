@@ -18,9 +18,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @Table(name = "musum_place")
-@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED) 
-//@Builder
 public class MusumPlace {
 	
 	@Id
@@ -47,8 +45,6 @@ public class MusumPlace {
 	@Comment("미술관 코드")
 	@Column(length = 3, nullable = true)
 	String musumCd;
-	
-	
 	
 	@Builder
 	public MusumPlace(Long placeId, String placeTypeCd, String placeNm, String placeDscrp, String musumCd) {

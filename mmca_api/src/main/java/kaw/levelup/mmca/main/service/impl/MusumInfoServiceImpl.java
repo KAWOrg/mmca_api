@@ -27,6 +27,8 @@ public class MusumInfoServiceImpl implements MusumInfoService {
 	@Autowired
 	private final MusumPlaceRepository musumPlaceRepository;
 
+	
+	// 미술관 목록
 	@Override
 	public List<MusumInfoDTO> getMusumList() {
 		// .findAll()로 List 반환
@@ -51,14 +53,13 @@ public class MusumInfoServiceImpl implements MusumInfoService {
 		return resultList;
 	}
 
+	// 시설정보 목록
 	@Override
 	public List<MusumPlaceDTO> getMusumPlaceList(String musumCd) {
 		List<MusumPlace> res = musumPlaceRepository.findByMusumCd(musumCd);
-
 		
 		// List -> DTO로 변환
 		List<MusumPlaceDTO> returnList = new ArrayList<>();
-		
 		
 		for (MusumPlace musumPlace : res) {
 			returnList.add(musumPlace.toDTO());
@@ -67,24 +68,12 @@ public class MusumInfoServiceImpl implements MusumInfoService {
 		return returnList;
 	}
 
+	// 시설정보 등록
 	@Override
 	public void createMusumPlace(MusumPlaceDTO dto) {
-		//vo.builder()
 		
-//		MusumPlaceVO dddd = vo.builder()
-//		.placeId(vo.getPlaceId())
-//		.placeNm(vo.getPlaceNm())
-//		.placeTypeCd(vo.getPlaceTypeCd())
-//		.placeDscrp(vo.getPlaceDscrp())
-//		.build();
-//		
-//		dddd.toEntity();
-		
-		// Entity 객체를 new로 생성하면 객체무결성이 깨질 수 있음, 추후 빌더로 리팩토링 고민해보기
-		MusumPlace musumPlace = dto.toEntity();
-				
+		MusumPlace musumPlace = dto.toEntity();		
 		musumPlaceRepository.save(musumPlace);
 	}
 	
-
 }
