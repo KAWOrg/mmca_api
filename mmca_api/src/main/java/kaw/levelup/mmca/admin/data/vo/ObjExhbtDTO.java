@@ -15,19 +15,13 @@ public class ObjExhbtDTO {
 	String objExhbtId;	// 전시id
 	String objId;	// 작품id
 	
-	@Builder
-	public ObjExhbtDTO(String objExhbtSn, String objExhbtId, String objId) {
-		this.objExhbtSn = objExhbtSn;
-		this.objExhbtId = objExhbtId;
-		this.objId = objId;
-	}
-	
-	public ObjExhbtDTO toEntity() {
-		return ObjExhbtDTO.builder()
-				.objExhbtSn(objExhbtSn)
-				.objExhbtId(objExhbtId)
-				.objId(objId)
-				.build();
-	}
+	/*
+	 * @Builder public ObjExhbtDTO(String objExhbtSn, String objExhbtId, String
+	 * objId) { this.objExhbtSn = objExhbtSn; this.objExhbtId = objExhbtId;
+	 * this.objId = objId; }
+	 * 
+	 * public ObjExhbtDTO toEntity() { return ObjExhbtDTO.builder()
+	 * .objExhbtSn(objExhbtSn) .objExhbtId(objExhbtId) .objId(objId) .build(); }
+	 */
 	
 }

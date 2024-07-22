@@ -18,21 +18,13 @@ public class ObjListDTO {
 	String objWritr;	// 작가
 	Date registDt;	// 제작년도
 	
-	@Builder
-	public ObjListDTO(String objId, String objNm, String objWritr, Date registDt) {
-		this.objId = objId;
-		this.objNm = objNm;
-		this.objWritr = objWritr;
-		this.registDt = registDt;
-	}
-	
-	public ObjListDTO toEntity() {
-		return ObjListDTO.builder()
-				.objId(objId)
-				.objNm(objNm)
-				.objWritr(objWritr)
-				.registDt(registDt)
-				.build();
-	}
+	/*
+	 * @Builder public ObjListDTO(String objId, String objNm, String objWritr, Date
+	 * registDt) { this.objId = objId; this.objNm = objNm; this.objWritr = objWritr;
+	 * this.registDt = registDt; }
+	 * 
+	 * public ObjListDTO toEntity() { return ObjListDTO.builder() .objId(objId)
+	 * .objNm(objNm) .objWritr(objWritr) .registDt(registDt) .build(); }
+	 */
 	
 }

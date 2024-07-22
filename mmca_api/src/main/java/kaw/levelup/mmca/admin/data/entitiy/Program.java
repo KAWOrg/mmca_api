@@ -11,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import kaw.levelup.mmca.admin.data.vo.ProgramDTO;
+import lombok.Data;
 import lombok.Getter;
 
 @Entity
@@ -19,23 +20,23 @@ import lombok.Getter;
 public class Program {
 	
 	@Id
-	@Column(length = 30, nullable = false)
+	@Column(length = 10, nullable = false)
 	@Comment("프로그램 id")
 	String prgrmId;
 	
-	@Column(length = 500, nullable = false)
+	@Column(length = 100, nullable = false)
 	@Comment("프로그램 제목")
 	String prgrmTitle;
 	
 	@Column(nullable = false)
 	@Comment("프로그램 시작일")
-	Date prgrmStrtDt;
+	String prgrmStrtDt;
 	
 	@Column(nullable = false)
 	@Comment("프로그램 종료일")
-	Date prgrmEndDt;
+	String prgrmEndDt;
 	
-	@Column(length = 100000, nullable = false)
+	@Column(length = 100, nullable = false)
 	@Comment("비용")
 	int prgrmPrice;
 	
@@ -51,15 +52,15 @@ public class Program {
 	@Comment("썸네일")
 	byte[] thbnail;
 	
-	@Column(length = 5000, nullable = false)
+	@Column(length = 300, nullable = false)
 	@Comment("내용")
 	String prgrmDscrp;
 	
 	@Column(nullable = false)
 	@Comment("등록일자")
-	Timestamp registDt;
+	String registDt;
 	
-	@Column(length = 1000, nullable = false)
+	@Column(length = 100, nullable = false)
 	@Comment("조회수")
 	int viewCnt;
 	
@@ -81,11 +82,11 @@ public class Program {
 	
 	@Column(nullable = false)
 	@Comment("프로그램 시작 시간")
-	Time prgrmStrtTime;
+	String prgrmStrtTime;
 	
 	@Column(nullable = false)
 	@Comment("프로그램 종료 시간")
-	Time prgrmEndTime;
+	String prgrmEndTime;
 	
 	@Column(length = 30, nullable = false)
 	@Comment("프로그램 구분코드")

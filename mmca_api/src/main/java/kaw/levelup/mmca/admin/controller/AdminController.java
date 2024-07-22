@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kaw.levelup.mmca.admin.data.vo.ProgramDTO;
-import kaw.levelup.mmca.admin.service.impl.AdminService;
+import kaw.levelup.mmca.admin.service.AdminService;
 import lombok.RequiredArgsConstructor;
 
 @RestController

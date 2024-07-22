@@ -1,4 +1,4 @@
-package kaw.levelup.mmca.admin.service.impl;
+package kaw.levelup.mmca.admin.service;
 
 import java.util.List;
 
