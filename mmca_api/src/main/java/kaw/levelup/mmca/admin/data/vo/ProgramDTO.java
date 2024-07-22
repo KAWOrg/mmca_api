@@ -1,4 +1,4 @@
-package kaw.levelup.mmca.main.data.vo;
+package kaw.levelup.mmca.admin.data.vo;
 
 
 import java.sql.Date;
@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 // 프로그램
 public class ProgramDTO {
 
-	String prgrm_id;
-	String prgrm_title;	// 프로그램 제목
-	Date prgrm_strt_dt;	// 프로그램 시작일
-	Date prgrm_end_dt;	// 프로그램 종료일
+	String prgrmId;
+	String prgrmTitle;	// 프로그램 제목
+	Date prgrmStrtDt;	// 프로그램 시작일
+	Date prgrmEndDt;	// 프로그램 종료일
 	int prgrm_price;	// 비용
 	int max_ptcp;	// 현장 관람정원
 	int onlin_max_ptcp;	// 온라인 관람정원

@@ -1,4 +1,4 @@
-package kaw.levelup.mmca.main.data.vo;
+package kaw.levelup.mmca.admin.data.vo;
 
 import java.sql.Date;
 
