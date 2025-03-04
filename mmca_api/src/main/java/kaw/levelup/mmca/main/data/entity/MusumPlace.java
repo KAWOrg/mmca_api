@@ -1,12 +1,14 @@
 package kaw.levelup.mmca.main.data.entity;
 
 import org.hibernate.annotations.Comment;
+import org.hibernate.annotations.Type;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import kaw.levelup.mmca.main.data.vo.MusumPlaceDTO;
 import lombok.AccessLevel;
@@ -20,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "musum_place")
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED) 
-//@Builder
+@Builder
 public class MusumPlace {
 	
 	@Id
@@ -37,7 +39,7 @@ public class MusumPlace {
 	String placeNm;
 	
 	@Comment("시설이미지")
-	@Column(nullable = true)
+	@Column(nullable = true, columnDefinition = "bytea") // 명시적으로 bytea로 지정
 	byte[] imageFile;
 	
 	@Comment("내용")
@@ -49,15 +51,13 @@ public class MusumPlace {
 	String musumCd;
 	
 	
-	
-	@Builder
-	public MusumPlace(Long placeId, String placeTypeCd, String placeNm, String placeDscrp, String musumCd) {
-		this.placeId = placeId;
-		this.placeTypeCd = placeTypeCd;
-		this.placeNm = placeNm;
-		this.placeDscrp = placeDscrp;
-		this.musumCd = musumCd;
-	}
+	/*
+	 * @Builder public MusumPlace(Long placeId, String placeTypeCd, String placeNm,
+	 * byte[] imageFile, String placeDscrp, String musumCd) { this.placeId =
+	 * placeId; this.placeTypeCd = placeTypeCd; this.placeNm = placeNm;
+	 * this.imageFile = imageFile; this.placeDscrp = placeDscrp; this.musumCd =
+	 * musumCd; }
+	 */
 
 	public MusumPlaceDTO toDTO() {
 		return MusumPlaceDTO.builder()

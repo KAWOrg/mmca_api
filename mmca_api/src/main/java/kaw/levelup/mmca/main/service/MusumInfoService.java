@@ -10,5 +10,5 @@ public interface MusumInfoService {
 	
 	List<MusumInfoDTO> getMusumList();
 	List<MusumPlaceDTO> getMusumPlaceList(String musumCd);
-	void createMusumPlace(MusumPlaceDTO dto);
+	void createPlace(MusumPlaceDTO dto);
 }

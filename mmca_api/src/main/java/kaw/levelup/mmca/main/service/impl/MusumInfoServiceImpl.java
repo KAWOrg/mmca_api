@@ -68,7 +68,7 @@ public class MusumInfoServiceImpl implements MusumInfoService {
 	}
 
 	@Override
-	public void createMusumPlace(MusumPlaceDTO dto) {
+	public void createPlace(MusumPlaceDTO dto) {
 		//vo.builder()
 		
 //		MusumPlaceVO dddd = vo.builder()
@@ -81,9 +81,9 @@ public class MusumInfoServiceImpl implements MusumInfoService {
 //		dddd.toEntity();
 		
 		// Entity 객체를 new로 생성하면 객체무결성이 깨질 수 있음, 추후 빌더로 리팩토링 고민해보기
-		MusumPlace musumPlace = dto.toEntity();
-				
-		musumPlaceRepository.save(musumPlace);
+		MusumPlace entity = dto.toEntity();
+		
+		musumPlaceRepository.save(entity);
 	}
 	
 
