@@ -32,16 +32,6 @@ public class MusumInfoServiceImpl implements MusumInfoService {
 		// .findAll()로 List 반환
 		List<MusumInfo> res = musumInfoRepository.findAll();
 		
-		// List -> DTO로 변환
-//		List<MusumInfoVO> vo = res.stream()
-//						.map(v -> new MusumInfoVO(
-//								v.getMusumCd(),
-//								v.getMusumNm(),
-//								v.getMusumAddr(),
-//								v.getMusumMailAddr(),
-//								v.getMusumTel()))
-//						.collect(Collectors.toList());
-		
 		// Entity 객체를 DTO로 변환
 		List<MusumInfoDTO> resultList = new ArrayList<>();
 		for(MusumInfo musumInfo : res) {
@@ -54,17 +44,17 @@ public class MusumInfoServiceImpl implements MusumInfoService {
 	@Override
 	public List<MusumPlaceDTO> getMusumPlaceList(String musumCd) {
 		List<MusumPlace> res = musumPlaceRepository.findByMusumCd(musumCd);
-
 		
 		// List -> DTO로 변환
-		List<MusumPlaceDTO> returnList = new ArrayList<>();
-		
-		
-		for (MusumPlace musumPlace : res) {
-			returnList.add(musumPlace.toDTO());
-		}
-		
-		return returnList;
+//		List<MusumPlaceDTO> returnList = new ArrayList<>();
+//		
+//		for (MusumPlace musumPlace : res) {
+//			returnList.add(musumPlace.toDTO());
+//		}
+
+		return res.stream()
+				.map(MusumPlace::toDTO)
+				.collect(Collectors.toList());
 	}
 
 	@Override

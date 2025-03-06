@@ -50,15 +50,6 @@ public class MusumPlace {
 	@Column(length = 3, nullable = true)
 	String musumCd;
 	
-	
-	/*
-	 * @Builder public MusumPlace(Long placeId, String placeTypeCd, String placeNm,
-	 * byte[] imageFile, String placeDscrp, String musumCd) { this.placeId =
-	 * placeId; this.placeTypeCd = placeTypeCd; this.placeNm = placeNm;
-	 * this.imageFile = imageFile; this.placeDscrp = placeDscrp; this.musumCd =
-	 * musumCd; }
-	 */
-
 	public MusumPlaceDTO toDTO() {
 		return MusumPlaceDTO.builder()
 				.placeId(placeId)
@@ -66,6 +57,7 @@ public class MusumPlace {
 				.placeNm(placeNm)
 				.placeDscrp(placeDscrp)
 				.musumCd(musumCd)
+				.imageBytes(imageFile)
 				.build();
 	}
 }
